@@ -17,7 +17,7 @@ botaoAdicionar.addEventListener("click", function(event) {//criando uma função
         return
     }
     var tabela = document.querySelector("#tabela-pacientes");
-
+     
     tabela.appendChild(pacienteTr);
 
     form.reset();//função padrão para resetar o formulário com .reset
@@ -68,11 +68,15 @@ function validaPaciente(paciente){
     if (validaPeso(paciente.peso)!=true){
        erros.push("Peso é inválido")
     }
-
     if (validaAltura(paciente.altura)!=true){
         erros.push("Altura é invalida")
     }
-
+    if (!validaNome(paciente.nome)){
+        erros.push("Paciente sem nome")
+    }
+    if (!validaGordura(paciente.gordura)){
+        erros.push("Gordura Inválida")
+    }
     return erros
 
 }
@@ -87,15 +91,12 @@ function montaTd(dado,classe){
 
 //criando mensagens de erro 
 function exibeMensagensDeErro(erros){
-    var ul = document.querySelector("#mensagem-erro")
-
+    var ul = document.querySelector("#mensagens-erro")
+    ul.innerHTML = ""
     erros.forEach(function(erro){//Com o forEach lê se, para cada item do ERROS, execute a function(parametro)
         var li = document.createElement("li");
         li.textContent = erro;
         ul.appendChild(li);
 
     })
-   
-   
-    erroUl.appendChild(erroLi);
 }
