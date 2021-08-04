@@ -19,7 +19,7 @@ botaoAdicionar.addEventListener("click", function(event) {//criando uma função
     var tabela = document.querySelector("#tabela-pacientes");
      
     tabela.appendChild(pacienteTr);
-
+    erros = "";
     form.reset();//função padrão para resetar o formulário com .reset
 
 
@@ -92,7 +92,7 @@ function montaTd(dado,classe){
 //criando mensagens de erro 
 function exibeMensagensDeErro(erros){
     var ul = document.querySelector("#mensagens-erro")
-    ul.innerHTML = ""
+    ul.innerHTML = "" //podemos obter o conteúdo HTML (HTML interno) de um elemento.
     erros.forEach(function(erro){//Com o forEach lê se, para cada item do ERROS, execute a function(parametro)
         var li = document.createElement("li");
         li.textContent = erro;
