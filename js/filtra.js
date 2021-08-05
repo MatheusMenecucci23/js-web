@@ -18,7 +18,7 @@ campoFiltro.addEventListener("input", function(){// adicionando um evento quando
         }
     }
     else{
-        for (let i = 0; i < pacientes.length; i++) {
+        for (let i = 0; i < pacientes.length; i++) {//removendo a classe se o tiver nada digitado no campoFiltro
             var paciente = pacientes[i]
             var tdNome = paciente.querySelector(".info-nome")
             var nome = tdNome.textContent

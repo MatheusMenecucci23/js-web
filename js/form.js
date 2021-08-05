@@ -2,9 +2,9 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
 //O QUE BOTÃO DEVE FAZER:
 botaoAdicionar.addEventListener("click", function(event) {//criando uma função anonima
-    event.preventDefault();
+    event.preventDefault();//tirando o comportamento padrão do evento, ou seja
 
-    var form = document.querySelector("#form-adiciona");
+    var form = document.querySelector("#form-adiciona");//pegando o formulário
 
     var paciente = obtemPacienteFormulario(form)//pegando os dados do paciente
 
@@ -68,7 +68,7 @@ function montaTr(paciente){
 function validaPaciente(paciente){
 
     var erros = [];
-
+    //FUNÇÃO VALIDA ESTAÕ NO ARQUIVO CALCULA-IMC.JS
     if (validaPeso(paciente.peso)!=true){
        erros.push("Peso é inválido")
     }
